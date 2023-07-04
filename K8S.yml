@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: banking
+  name: banking-finance
 spec:
   replicas: 1
   strategy:
@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: javawebappsvc
+  name: bankingwebappsvc
 spec:
   type: NodePort
   selector:
@@ -32,4 +32,4 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
-      nodePort: 30003
+      nodePort: 30010
